@@ -21,6 +21,8 @@ public class Uploader extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+
 		out.println("<h1>Uploading the picture</h1>");
+		out.printf("<h2>Content:</h2> <p>%s</p>", request.getReader().readLine());
 	}
 }
