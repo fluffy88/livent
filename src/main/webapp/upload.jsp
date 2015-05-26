@@ -15,11 +15,19 @@
 		<center>
 			<h1>File Upload</h1>
 			<form method="post" action="Upload" enctype="multipart/form-data">
-				Select file to upload: <input type="file" name="file" size="60" /><br />
+				Select file to upload: <input type="file" name="file[]" multiple accept="image/*" /><br />
 				<br />
 				<input type="submit" value="Upload" />
 			</form>
 		</center>
 
+		<ul>
+			<%
+				final File dir = new File("uploads");
+				for (final File image : dir.listFiles()) {
+					out.println("<li>" + image.getPath() + "</li>");
+				}
+			%>
+		</ul>
 	</body>
 </html>
