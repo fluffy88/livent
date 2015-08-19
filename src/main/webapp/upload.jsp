@@ -22,12 +22,15 @@
 		</center>
 
 		<ul>
-			<%
-				final File dir = new File("uploads");
-				for (final File image : dir.listFiles()) {
+		<%
+			final File dir = new File("uploads");
+			final File[] images = dir.listFiles();
+			if (images != null) {
+				for (final File image : images) {
 					out.println("<li>" + image.getPath() + "</li>");
 				}
-			%>
+			}
+		%>
 		</ul>
 	</body>
 </html>

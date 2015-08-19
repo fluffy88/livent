@@ -33,6 +33,7 @@ public class Uploader extends HttpServlet {
 			final File dir = new File("uploads");
 			final File file = new File(dir, fileName);
 			dir.mkdir();
+			log("Does " + dir.getAbsolutePath() + " exist? " + dir.exists());
 			Files.copy(is, file.toPath());
 			// part.write(fileName);
 
